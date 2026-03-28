@@ -1,0 +1,310 @@
+[
+  {
+    "id": 571,
+    "name": "Amnat Charoen"
+  },
+  {
+    "id": 218,
+    "name": "Ang Thong"
+  },
+  {
+    "id": 219,
+    "name": "Bangkok"
+  },
+  {
+    "id": 590,
+    "name": "Bueng Kan"
+  },
+  {
+    "id": 572,
+    "name": "Buri Ram"
+  },
+  {
+    "id": 220,
+    "name": "Chachoengsao"
+  },
+  {
+    "id": 221,
+    "name": "Chainat"
+  },
+  {
+    "id": 573,
+    "name": "Chaiyaphum"
+  },
+  {
+    "id": 463,
+    "name": "Chanthaburi"
+  },
+  {
+    "id": 101,
+    "name": "Chiang Mai"
+  },
+  {
+    "id": 102,
+    "name": "Chiang Rai"
+  },
+  {
+    "id": 464,
+    "name": "Chon Buri"
+  },
+  {
+    "id": 343,
+    "name": "Chumphon"
+  },
+  {
+    "id": 574,
+    "name": "Kalasin"
+  },
+  {
+    "id": 103,
+    "name": "Kamphaeng Phet"
+  },
+  {
+    "id": 222,
+    "name": "Kanchanaburi"
+  },
+  {
+    "id": 575,
+    "name": "Khon Kaen"
+  },
+  {
+    "id": 344,
+    "name": "Krabi"
+  },
+  {
+    "id": 104,
+    "name": "Lampang"
+  },
+  {
+    "id": 105,
+    "name": "Lamphun"
+  },
+  {
+    "id": 576,
+    "name": "Loei"
+  },
+  {
+    "id": 223,
+    "name": "Lop Buri"
+  },
+  {
+    "id": 106,
+    "name": "Mae Hong Son"
+  },
+  {
+    "id": 577,
+    "name": "Maha Sarakham"
+  },
+  {
+    "id": 578,
+    "name": "Mukdahan"
+  },
+  {
+    "id": 224,
+    "name": "Nakhon Nayok"
+  },
+  {
+    "id": 225,
+    "name": "Nakhon Pathom"
+  },
+  {
+    "id": 579,
+    "name": "Nakhon Phanom"
+  },
+  {
+    "id": 580,
+    "name": "Nakhon Ratchasima"
+  },
+  {
+    "id": 107,
+    "name": "Nakhon Sawan"
+  },
+  {
+    "id": 345,
+    "name": "Nakhon Si Thammarat"
+  },
+  {
+    "id": 108,
+    "name": "Nan"
+  },
+  {
+    "id": 346,
+    "name": "Narathiwat"
+  },
+  {
+    "id": 581,
+    "name": "Nong Bua Lam Phu"
+  },
+  {
+    "id": 582,
+    "name": "Nong Khai"
+  },
+  {
+    "id": 226,
+    "name": "Nonthaburi"
+  },
+  {
+    "id": 227,
+    "name": "Pathum Thani"
+  },
+  {
+    "id": 347,
+    "name": "Pattani"
+  },
+  {
+    "id": 348,
+    "name": "Phang Nga"
+  },
+  {
+    "id": 349,
+    "name": "Phatthalung"
+  },
+  {
+    "id": 109,
+    "name": "Phayao"
+  },
+  {
+    "id": 110,
+    "name": "Phetchabun"
+  },
+  {
+    "id": 228,
+    "name": "Phetchaburi"
+  },
+  {
+    "id": 111,
+    "name": "Phichit"
+  },
+  {
+    "id": 112,
+    "name": "Phitsanulok"
+  },
+  {
+    "id": 229,
+    "name": "Phra Nakhon Si Ayutthaya"
+  },
+  {
+    "id": 113,
+    "name": "Phrae"
+  },
+  {
+    "id": 350,
+    "name": "Phuket"
+  },
+  {
+    "id": 230,
+    "name": "Prachin Buri"
+  },
+  {
+    "id": 231,
+    "name": "Prachuap Khiri Khan"
+  },
+  {
+    "id": 351,
+    "name": "Ranong"
+  },
+  {
+    "id": 232,
+    "name": "Ratchaburi"
+  },
+  {
+    "id": 465,
+    "name": "Rayong"
+  },
+  {
+    "id": 583,
+    "name": "Roi Et"
+  },
+  {
+    "id": 233,
+    "name": "Sa Kaeo"
+  },
+  {
+    "id": 584,
+    "name": "Sakon Nakhon"
+  },
+  {
+    "id": 234,
+    "name": "Samut Prakan"
+  },
+  {
+    "id": 235,
+    "name": "Samut Sakhon"
+  },
+  {
+    "id": 236,
+    "name": "Samut Songkhram"
+  },
+  {
+    "id": 237,
+    "name": "Saraburi"
+  },
+  {
+    "id": 352,
+    "name": "Satun"
+  },
+  {
+    "id": 585,
+    "name": "Si Sa Ket"
+  },
+  {
+    "id": 238,
+    "name": "Sing Buri"
+  },
+  {
+    "id": 353,
+    "name": "Songkhla"
+  },
+  {
+    "id": 114,
+    "name": "Sukhothai"
+  },
+  {
+    "id": 239,
+    "name": "Suphan Buri"
+  },
+  {
+    "id": 354,
+    "name": "Surat Thani"
+  },
+  {
+    "id": 586,
+    "name": "Surin"
+  },
+  {
+    "id": 115,
+    "name": "Tak"
+  },
+  {
+    "id": 355,
+    "name": "Trang"
+  },
+  {
+    "id": 466,
+    "name": "Trat"
+  },
+  {
+    "id": 587,
+    "name": "Ubon Ratchathani"
+  },
+  {
+    "id": 588,
+    "name": "Udon Thani"
+  },
+  {
+    "id": 116,
+    "name": "Uthai Thani"
+  },
+  {
+    "id": 117,
+    "name": "Uttaradit"
+  },
+  {
+    "id": 356,
+    "name": "Yala"
+  },
+  {
+    "id": 589,
+    "name": "Yasothon"
+  }
+]

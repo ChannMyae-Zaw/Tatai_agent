@@ -1,0 +1,674 @@
+[
+  {
+    "id": 6,
+    "name": "\"Art, Culture, Heritage & Architecture\""
+  },
+  {
+    "id": 135,
+    "name": "\"Books, Maps & Guides\""
+  },
+  {
+    "id": 43,
+    "name": "\"Cultural Show, Cultural Performance\""
+  },
+  {
+    "id": 130,
+    "name": "\"Cultural Show, Cultural Performance\""
+  },
+  {
+    "id": 57,
+    "name": "\"Dam,Reservoir, Lake\""
+  },
+  {
+    "id": 65,
+    "name": "\"River, Canal\""
+  },
+  {
+    "id": 21,
+    "name": "\"Royal Project, Research and Development\""
+  },
+  {
+    "id": 83,
+    "name": "\"Village, Community\""
+  },
+  {
+    "id": 165,
+    "name": "24-hour restaurant"
+  },
+  {
+    "id": 54,
+    "name": "Accommodation Specialist"
+  },
+  {
+    "id": 40,
+    "name": "Adventure Travel"
+  },
+  {
+    "id": 166,
+    "name": "Afternoon Tea"
+  },
+  {
+    "id": 56,
+    "name": "Airline specialists"
+  },
+  {
+    "id": 66,
+    "name": "Airlines"
+  },
+  {
+    "id": 94,
+    "name": "Airport Rail Link"
+  },
+  {
+    "id": 78,
+    "name": "Airport Shuttle"
+  },
+  {
+    "id": 167,
+    "name": "Alfresco/Outdoor Dining"
+  },
+  {
+    "id": 95,
+    "name": "Amusement Park"
+  },
+  {
+    "id": 110,
+    "name": "Amusement Park"
+  },
+  {
+    "id": 107,
+    "name": "Animal camps and shows"
+  },
+  {
+    "id": 128,
+    "name": "Animal camps and shows"
+  },
+  {
+    "id": 124,
+    "name": "Antiques & Collectibles"
+  },
+  {
+    "id": 125,
+    "name": "Apparel - ChildrenNULLs"
+  },
+  {
+    "id": 127,
+    "name": "Apparel - MenNULLs"
+  },
+  {
+    "id": 129,
+    "name": "Apparel - WomenNULLs"
+  },
+  {
+    "id": 61,
+    "name": "Archaeological"
+  },
+  {
+    "id": 131,
+    "name": "Art & Craft"
+  },
+  {
+    "id": 37,
+    "name": "Art & Craft Centres"
+  },
+  {
+    "id": 39,
+    "name": "Art Galleries"
+  },
+  {
+    "id": 134,
+    "name": "Art Galleries"
+  },
+  {
+    "id": 32,
+    "name": "Bakery"
+  },
+  {
+    "id": 90,
+    "name": "Bangkok BTS Skytrain"
+  },
+  {
+    "id": 75,
+    "name": "Beaches & Bay"
+  },
+  {
+    "id": 106,
+    "name": "Beauty"
+  },
+  {
+    "id": 30,
+    "name": "Beverage"
+  },
+  {
+    "id": 86,
+    "name": "Boat & Yacht"
+  },
+  {
+    "id": 168,
+    "name": "Brunch"
+  },
+  {
+    "id": 1,
+    "name": "Buffet"
+  },
+  {
+    "id": 62,
+    "name": "Bus & Coach"
+  },
+  {
+    "id": 3,
+    "name": "Cafes"
+  },
+  {
+    "id": 82,
+    "name": "Car & Vehicle hire"
+  },
+  {
+    "id": 136,
+    "name": "Carpets"
+  },
+  {
+    "id": 71,
+    "name": "Caves"
+  },
+  {
+    "id": 5,
+    "name": "Cheap Eat/Budget"
+  },
+  {
+    "id": 162,
+    "name": "Children/Family"
+  },
+  {
+    "id": 163,
+    "name": "Chillout"
+  },
+  {
+    "id": 49,
+    "name": "Churches"
+  },
+  {
+    "id": 99,
+    "name": "Cinema"
+  },
+  {
+    "id": 58,
+    "name": "Coach Holiday specialists"
+  },
+  {
+    "id": 109,
+    "name": "Concert venue"
+  },
+  {
+    "id": 121,
+    "name": "Concert venue"
+  },
+  {
+    "id": 123,
+    "name": "Convention center"
+  },
+  {
+    "id": 164,
+    "name": "Corporate Functions"
+  },
+  {
+    "id": 137,
+    "name": "Cosmetics & Perfumes"
+  },
+  {
+    "id": 84,
+    "name": "Custom Transfers"
+  },
+  {
+    "id": 52,
+    "name": "Customized tour specialists"
+  },
+  {
+    "id": 72,
+    "name": "Cycling"
+  },
+  {
+    "id": 138,
+    "name": "Diamonds"
+  },
+  {
+    "id": 77,
+    "name": "Diving site"
+  },
+  {
+    "id": 70,
+    "name": "Driving in Thailand"
+  },
+  {
+    "id": 115,
+    "name": "Educational gardens"
+  },
+  {
+    "id": 111,
+    "name": "Educational museums"
+  },
+  {
+    "id": 27,
+    "name": "Educational places"
+  },
+  {
+    "id": 139,
+    "name": "Electrical & Electronics"
+  },
+  {
+    "id": 140,
+    "name": "Fabrics"
+  },
+  {
+    "id": 7,
+    "name": "Fine Dining"
+  },
+  {
+    "id": 85,
+    "name": "Floating Market"
+  },
+  {
+    "id": 67,
+    "name": "Flower Field"
+  },
+  {
+    "id": 141,
+    "name": "Flowers and Plants"
+  },
+  {
+    "id": 142,
+    "name": "Food and Beverages"
+  },
+  {
+    "id": 42,
+    "name": "General travel"
+  },
+  {
+    "id": 143,
+    "name": "Gold & Jewellery"
+  },
+  {
+    "id": 103,
+    "name": "Golf course"
+  },
+  {
+    "id": 132,
+    "name": "Golf course"
+  },
+  {
+    "id": 144,
+    "name": "Gourmet Products"
+  },
+  {
+    "id": 10,
+    "name": "Green Travel"
+  },
+  {
+    "id": 46,
+    "name": "Group Travel Specialists"
+  },
+  {
+    "id": 100,
+    "name": "Health massage"
+  },
+  {
+    "id": 33,
+    "name": "Historical Houses"
+  },
+  {
+    "id": 35,
+    "name": "Historical Sites & Monuments"
+  },
+  {
+    "id": 145,
+    "name": "Home Appliances"
+  },
+  {
+    "id": 146,
+    "name": "Home Furnishings/Home DNULLcor"
+  },
+  {
+    "id": 102,
+    "name": "Hospital"
+  },
+  {
+    "id": 69,
+    "name": "Hot Spring"
+  },
+  {
+    "id": 55,
+    "name": "Islands"
+  },
+  {
+    "id": 9,
+    "name": "LGBPTQ+"
+  },
+  {
+    "id": 29,
+    "name": "Landmarks and Memorials"
+  },
+  {
+    "id": 59,
+    "name": "Libraries"
+  },
+  {
+    "id": 147,
+    "name": "Lingerie"
+  },
+  {
+    "id": 11,
+    "name": "Live Music"
+  },
+  {
+    "id": 87,
+    "name": "Local Market"
+  },
+  {
+    "id": 148,
+    "name": "Luggage/Handbags/Travel Items"
+  },
+  {
+    "id": 120,
+    "name": "Market"
+  },
+  {
+    "id": 117,
+    "name": "Meditation"
+  },
+  {
+    "id": 36,
+    "name": "Michelin Guide"
+  },
+  {
+    "id": 51,
+    "name": "Mosque"
+  },
+  {
+    "id": 76,
+    "name": "Motorcycle and Scooter Rentals"
+  },
+  {
+    "id": 80,
+    "name": "Motorhomes"
+  },
+  {
+    "id": 79,
+    "name": "Mountain (Doi)"
+  },
+  {
+    "id": 31,
+    "name": "Museums"
+  },
+  {
+    "id": 149,
+    "name": "Musical Instruments"
+  },
+  {
+    "id": 63,
+    "name": "National Parks & Marine Reserves"
+  },
+  {
+    "id": 12,
+    "name": "Nature & Wildlife"
+  },
+  {
+    "id": 89,
+    "name": "Night Market"
+  },
+  {
+    "id": 44,
+    "name": "Online Booking specialists"
+  },
+  {
+    "id": 150,
+    "name": "Optics"
+  },
+  {
+    "id": 13,
+    "name": "Organic Restaurants"
+  },
+  {
+    "id": 4,
+    "name": "Other"
+  },
+  {
+    "id": 38,
+    "name": "Other"
+  },
+  {
+    "id": 60,
+    "name": "Other"
+  },
+  {
+    "id": 122,
+    "name": "Other"
+  },
+  {
+    "id": 133,
+    "name": "Other"
+  },
+  {
+    "id": 161,
+    "name": "Other"
+  },
+  {
+    "id": 158,
+    "name": "Other Accessories"
+  },
+  {
+    "id": 81,
+    "name": "Other nature sites"
+  },
+  {
+    "id": 53,
+    "name": "Other religious & spiritural sites"
+  },
+  {
+    "id": 96,
+    "name": "Others"
+  },
+  {
+    "id": 108,
+    "name": "Others"
+  },
+  {
+    "id": 105,
+    "name": "Outdoor activity and adventure sites"
+  },
+  {
+    "id": 101,
+    "name": "Parks & Gardens"
+  },
+  {
+    "id": 118,
+    "name": "Parks & Gardens"
+  },
+  {
+    "id": 8,
+    "name": "Places of Worship"
+  },
+  {
+    "id": 68,
+    "name": "Private Charters"
+  },
+  {
+    "id": 15,
+    "name": "Private Dining"
+  },
+  {
+    "id": 17,
+    "name": "Pubs & Bar"
+  },
+  {
+    "id": 19,
+    "name": "Quiet/Peaceful"
+  },
+  {
+    "id": 18,
+    "name": "Recreational & Entertainment"
+  },
+  {
+    "id": 2,
+    "name": "Registered Hotel"
+  },
+  {
+    "id": 20,
+    "name": "Romance/First Dates"
+  },
+  {
+    "id": 22,
+    "name": "Roof Garden/Terrace Dining"
+  },
+  {
+    "id": 45,
+    "name": "Royal Palace"
+  },
+  {
+    "id": 50,
+    "name": "Self Drive holiday specialists"
+  },
+  {
+    "id": 151,
+    "name": "Shoes"
+  },
+  {
+    "id": 23,
+    "name": "Shopping"
+  },
+  {
+    "id": 160,
+    "name": "Shopping"
+  },
+  {
+    "id": 159,
+    "name": "Silverware & Acessories"
+  },
+  {
+    "id": 34,
+    "name": "Snack"
+  },
+  {
+    "id": 152,
+    "name": "Souvenirs & Gifts"
+  },
+  {
+    "id": 98,
+    "name": "Spa"
+  },
+  {
+    "id": 14,
+    "name": "Spas & Wellness"
+  },
+  {
+    "id": 48,
+    "name": "Special interest specialists"
+  },
+  {
+    "id": 104,
+    "name": "Specialized Clinics"
+  },
+  {
+    "id": 153,
+    "name": "Sports Equipment & Sports Wear"
+  },
+  {
+    "id": 91,
+    "name": "Sports Venues"
+  },
+  {
+    "id": 114,
+    "name": "Sports Venues"
+  },
+  {
+    "id": 16,
+    "name": "Suburban Living"
+  },
+  {
+    "id": 24,
+    "name": "Supper/Night Dining"
+  },
+  {
+    "id": 88,
+    "name": "Taxis"
+  },
+  {
+    "id": 47,
+    "name": "Temple"
+  },
+  {
+    "id": 154,
+    "name": "Textiles"
+  },
+  {
+    "id": 97,
+    "name": "Theater"
+  },
+  {
+    "id": 119,
+    "name": "Theater"
+  },
+  {
+    "id": 126,
+    "name": "Theater"
+  },
+  {
+    "id": 155,
+    "name": "Toys"
+  },
+  {
+    "id": 64,
+    "name": "Train"
+  },
+  {
+    "id": 113,
+    "name": "Training centers"
+  },
+  {
+    "id": 74,
+    "name": "Tuk Tuks"
+  },
+  {
+    "id": 92,
+    "name": "Underground Bangkok MRT Subway"
+  },
+  {
+    "id": 26,
+    "name": "View/Scenery"
+  },
+  {
+    "id": 156,
+    "name": "Watches"
+  },
+  {
+    "id": 112,
+    "name": "Water park"
+  },
+  {
+    "id": 73,
+    "name": "Waterfalls"
+  },
+  {
+    "id": 28,
+    "name": "Waterfront"
+  },
+  {
+    "id": 157,
+    "name": "Wine & Spirits"
+  },
+  {
+    "id": 25,
+    "name": "Wineries & Breweries"
+  },
+  {
+    "id": 41,
+    "name": "World War II Sites"
+  },
+  {
+    "id": 93,
+    "name": "Zoos and Aquariums"
+  },
+  {
+    "id": 116,
+    "name": "Zoos and Aquariums"
+  }
+]

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TATAI — Thailand Travel Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9922A;
+    --gold-light: #E8B84B;
+    --gold-pale: #F5DFA0;
+    --teal: #1A5C5A;
+    --teal-dark: #0D3B39;
+    --teal-mid: #2A7D7A;
+    --teal-light: #3AA09C;
+    --cream: #FBF6ED;
+    --cream-dark: #F0E8D8;
+    --text-dark: #1A1208;
+    --text-mid: #4A3B20;
+    --text-light: #8A7355;
+    --white: #FFFFFF;
+    --shadow: rgba(26,18,8,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--teal-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(201,146,42,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(58,160,156,0.10) 0%, transparent 50%),
+      linear-gradient(160deg, #0D3B39 0%, #1A5C5A 50%, #0D3B39 100%);
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9922A' fill-opacity='0.04'%3E%3Cpath d='M30 0L60 30L30 60L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+  }
+
+  .app {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 780px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(13,59,57,0.7);
+    border: 1px solid rgba(201,146,42,0.25);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    animation: slideDown 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .logo {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--teal-dark);
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(201,146,42,0.35);
+  }
+
+  .header-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold-light);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .header-text p {
+    font-size: 13px;
+    color: rgba(245,223,160,0.6);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(245,223,160,0.45);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 8px rgba(74,222,128,0.6);
+    animation: pulse 2s infinite;
+  }
+
+  .status-dot.error { background: #F87171; box-shadow: 0 0 8px rgba(248,113,113,0.6); animation: none; }
+  .status-dot.loading { background: var(--gold-light); box-shadow: 0 0 8px rgba(232,184,75,0.6); }
+
+  .chat-area {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 4px 2px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,146,42,0.2) transparent;
+  }
+
+  .chat-area::-webkit-scrollbar { width: 4px; }
+  .chat-area::-webkit-scrollbar-track { background: transparent; }
+  .chat-area::-webkit-scrollbar-thumb { background: rgba(201,146,42,0.2); border-radius: 4px; }
+
+  .message {
+    display: flex;
+    gap: 10px;
+    animation: fadeUp 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .message.user { flex-direction: row-reverse; }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 2px;
+  }
+
+  .avatar.ai {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--teal-dark);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .avatar.user-av {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .bubble {
+    max-width: 72%;
+    padding: 13px 16px;
+    border-radius: 16px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  .message.ai .bubble {
+    background: rgba(13,59,57,0.75);
+    border: 1px solid rgba(201,146,42,0.18);
+    color: var(--cream);
+    border-radius: 4px 16px 16px 16px;
+    backdrop-filter: blur(8px);
+  }
+
+  .message.ai .bubble::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 8px;
+    border-radius: 2px;
+  }
+
+  .message.user .bubble {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--teal-dark);
+    border-radius: 16px 4px 16px 16px;
+    font-weight: 500;
+  }
+
+  .message.error .bubble {
+    background: rgba(248,113,113,0.1);
+    border: 1px solid rgba(248,113,113,0.25);
+    color: #FCA5A5;
+    border-radius: 4px 16px 16px 16px;
+  }
+
+  .suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    animation: fadeUp 0.5s 0.2s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .suggestion {
+    padding: 8px 14px;
+    background: rgba(201,146,42,0.08);
+    border: 1px solid rgba(201,146,42,0.22);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--gold-pale);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Sarabun', sans-serif;
+    white-space: nowrap;
+  }
+
+  .suggestion:hover {
+    background: rgba(201,146,42,0.18);
+    border-color: rgba(201,146,42,0.45);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .typing { display: flex; gap: 10px; animation: fadeUp 0.4s cubic-bezier(0.16,1,0.3,1); }
+
+  .typing-bubble {
+    background: rgba(13,59,57,0.75);
+    border: 1px solid rgba(201,146,42,0.18);
+    border-radius: 4px 16px 16px 16px;
+    padding: 14px 18px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .typing-label {
+    font-size: 12px;
+    color: rgba(201,146,42,0.5);
+    font-style: italic;
+    margin-right: 4px;
+  }
+
+  .dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: bounce 1.2s infinite;
+    opacity: 0.7;
+  }
+  .dot:nth-child(3) { animation-delay: 0.15s; }
+  .dot:nth-child(4) { animation-delay: 0.3s; }
+
+  .input-area {
+    display: flex;
+    gap: 10px;
+    padding: 16px 18px;
+    background: rgba(13,59,57,0.7);
+    border: 1px solid rgba(201,146,42,0.22);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    animation: slideUp 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .input-field {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 15px;
+    color: var(--cream);
+    resize: none;
+    max-height: 100px;
+    line-height: 1.5;
+  }
+
+  .input-field::placeholder { color: rgba(245,223,160,0.3); }
+  .input-field:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .send-btn {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: flex-end;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(201,146,42,0.35);
+  }
+
+  .send-btn:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 4px 18px rgba(201,146,42,0.5); }
+  .send-btn:active:not(:disabled) { transform: scale(0.97); }
+  .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .send-btn svg { width: 18px; height: 18px; fill: var(--teal-dark); }
+
+  .lang-toggle {
+    display: flex;
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 3px;
+    align-self: flex-end;
+  }
+
+  .lang-btn {
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: none;
+    background: none;
+    color: rgba(245,223,160,0.45);
+    font-size: 12px;
+    font-family: 'Sarabun', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .lang-btn.active { background: rgba(201,146,42,0.2); color: var(--gold-light); }
+
+  @keyframes slideDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes slideUp   { from { opacity:0; transform:translateY(20px);  } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp    { from { opacity:0; transform:translateY(10px);  } to { opacity:1; transform:translateY(0); } }
+  @keyframes bounce    { 0%,60%,100% { transform:translateY(0); } 30% { transform:translateY(-5px); } }
+  @keyframes pulse     { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">T</div>
+    <div class="header-text">
+      <h1>TATAI &nbsp;·&nbsp; ท้าทาย</h1>
+      <p>Thailand Tourism AI Assistant</p>
+    </div>
+    <div class="header-right">
+      <div class="status">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Connected</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div class="chat-area" id="chatArea">
+    <div class="message ai">
+      <div class="avatar ai">T</div>
+      <div class="bubble">
+        สวัสดีครับ! ผมคือ <strong>TATAI</strong> ผู้ช่วยวางแผนท่องเที่ยวไทยของคุณ 🌟<br><br>
+        ถามได้เลยครับ ไม่ว่าจะเป็นสถานที่เที่ยว โรงแรม ร้านอาหาร หรืองานเทศกาล<br><br>
+        <em style="color:rgba(245,223,160,0.6);font-size:13px;">Hello! I also speak English — just ask away.</em>
+      </div>
+    </div>
+    <div class="suggestions" id="suggestions">
+      <button class="suggestion" onclick="sendSuggestion(this)">🏯 วัดในเชียงใหม่</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">🏖️ Best beaches in Phuket</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">🎉 งานเทศกาลที่น่าสนใจ</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">🍜 Bangkok street food spots</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">🗺️ แนะนำเส้นทางภาคเหนือ</button>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="input-area">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="langTh" onclick="setLang('th')">TH</button>
+      <button class="lang-btn" id="langEn" onclick="setLang('en')">EN</button>
+    </div>
+    <textarea
+      class="input-field" id="inputField"
+      placeholder="ถามเกี่ยวกับการท่องเที่ยวไทย..."
+      rows="1"
+      onkeydown="handleKey(event)"
+      oninput="autoResize(this)"
+    ></textarea>
+    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+
+</div>
+
+<script>
+  // ── Config ──────────────────────────────────────────────
+  const API_BASE = 'http://localhost:8000';   // your FastAPI server
+  const SESSION_ID = 'user_' + Math.random().toString(36).slice(2, 9);
+
+  let currentLang = 'th';
+  let isLoading = false;
+
+  const placeholders = {
+    th: 'ถามเกี่ยวกับการท่องเที่ยวไทย...',
+    en: 'Ask about travel in Thailand...'
+  };
+
+  // ── Language toggle ──────────────────────────────────────
+  function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('langTh').classList.toggle('active', lang === 'th');
+    document.getElementById('langEn').classList.toggle('active', lang === 'en');
+    document.getElementById('inputField').placeholder = placeholders[lang];
+  }
+
+  // ── Input helpers ────────────────────────────────────────
+  function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+  }
+
+  function handleKey(e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  }
+
+  function sendSuggestion(btn) {
+    const text = btn.textContent.replace(/^\S+\s/, '');
+    document.getElementById('inputField').value = text;
+    document.getElementById('suggestions').style.display = 'none';
+    sendMessage();
+  }
+
+  // ── Status indicator ─────────────────────────────────────
+  function setStatus(state) {
+    const dot  = document.getElementById('statusDot');
+    const text = document.getElementById('statusText');
+    dot.className = 'status-dot' + (state === 'error' ? ' error' : state === 'loading' ? ' loading' : '');
+    text.textContent = state === 'error' ? 'Disconnected' : state === 'loading' ? 'Thinking...' : 'Connected';
+  }
+
+  // ── Render message ───────────────────────────────────────
+  function appendMessage(role, html) {
+    const chat = document.getElementById('chatArea');
+    const div  = document.createElement('div');
+    div.className = `message ${role}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = `avatar ${role === 'ai' ? 'ai' : role === 'error' ? 'ai' : 'user-av'}`;
+    avatar.textContent = role === 'ai' || role === 'error' ? 'T' : '👤';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    bubble.innerHTML = html;
+
+    div.appendChild(avatar);
+    div.appendChild(bubble);
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function formatText(text) {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+  }
+
+  // ── Typing indicator ─────────────────────────────────────
+  function showTyping() {
+    const chat = document.getElementById('chatArea');
+    const div  = document.createElement('div');
+    div.className = 'typing';
+    div.id = 'typingIndicator';
+    div.innerHTML = `
+      <div class="avatar ai">T</div>
+      <div class="typing-bubble">
+        <span class="typing-label">กำลังค้นหาข้อมูล...</span>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>`;
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function hideTyping() {
+    document.getElementById('typingIndicator')?.remove();
+  }
+
+  // ── Set loading state ────────────────────────────────────
+  function setLoading(loading) {
+    isLoading = loading;
+    document.getElementById('inputField').disabled = loading;
+    document.getElementById('sendBtn').disabled   = loading;
+    setStatus(loading ? 'loading' : 'ok');
+  }
+
+  // ── Main send ────────────────────────────────────────────
+  async function sendMessage() {
+    if (isLoading) return;
+    const input = document.getElementById('inputField');
+    const text  = input.value.trim();
+    if (!text) return;
+
+    input.value = '';
+    input.style.height = 'auto';
+    document.getElementById('suggestions').style.display = 'none';
+
+    appendMessage('user', formatText(text));
+    setLoading(true);
+    showTyping();
+
+    try {
+      const res = await fetch(`${API_BASE}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: text,
+          session_id: SESSION_ID,
+          lang: currentLang,
+        }),
+      });
+
+      hideTyping();
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || `Server error ${res.status}`);
+      }
+
+      const data = await res.json();
+      appendMessage('ai', formatText(data.reply));
+      setStatus('ok');
+
+    } catch (err) {
+      hideTyping();
+      const isConn = err.message.includes('fetch') || err.message.includes('Failed');
+      appendMessage('error',
+        isConn
+          ? '⚠️ Cannot reach the server.<br><small style="opacity:.6">Make sure <code>uvicorn server:app</code> is running on port 8000.</small>'
+          : `⚠️ ${err.message}`
+      );
+      setStatus('error');
+    } finally {
+      setLoading(false);
+      document.getElementById('inputField').focus();
+    }
+  }
+
+  // ── Check server on load ─────────────────────────────────
+  (async () => {
+    try {
+      const r = await fetch(`${API_BASE}/health`, { signal: AbortSignal.timeout(3000) });
+      setStatus(r.ok ? 'ok' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  })();
+</script>
+</body>
+</html>
